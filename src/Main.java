@@ -4,7 +4,7 @@ public class Main {
         //generate a random number that represents a char
         //26+26 lowercase and uppercase letters
         //10 digits
-        //total of 62 characters(only letters and digits)
+        //total of 62 characters(letters, digits and symbols)
         int rand = (int) (Math.random()* 62);
         //rand in [0-9] - digit -> ASCII [48-57]
         //rand in [10-35] - lowercase letter -> ASCII [97-122]
