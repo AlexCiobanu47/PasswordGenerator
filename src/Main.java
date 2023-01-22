@@ -4,11 +4,13 @@ public class Main {
         //generate a random number that represents a char
         //26+26 lowercase and uppercase letters
         //10 digits
-        //total of 62 characters(only letters and digits)
-        int rand = (int) (Math.random()* 62);
+        //15 symbols
+        //total of 77 characters(letters, digits and symbols)
+        int rand = (int) (Math.random()* 77);
         //rand in [0-9] - digit -> ASCII [48-57]
         //rand in [10-35] - lowercase letter -> ASCII [97-122]
         //rand in [36- 61] - uppercase letter -> ASCII [65-90]
+        //rand in [62-76] - symbols -> ASCII [33-47]
         if(rand <= 9){
             //digit
             rand += 48;
@@ -24,6 +26,8 @@ public class Main {
             rand += 61; //97-36
             return (char)(rand);
         }
+        // TO DO: add symbols
+
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
