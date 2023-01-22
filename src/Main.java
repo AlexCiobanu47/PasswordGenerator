@@ -4,11 +4,13 @@ public class Main {
         //generate a random number that represents a char
         //26+26 lowercase and uppercase letters
         //10 digits
-        //total of 62 characters(letters, digits and symbols)
+        //6 symbols
+        //total of 68 characters(letters, digits and symbols)
         int rand = (int) (Math.random()* 62);
         //rand in [0-9] - digit -> ASCII [48-57]
         //rand in [10-35] - lowercase letter -> ASCII [97-122]
         //rand in [36- 61] - uppercase letter -> ASCII [65-90]
+        //rand in [62 - 67] - symbol -> ASCII [33-38]
         if(rand <= 9){
             //digit
             rand += 48;
@@ -25,6 +27,23 @@ public class Main {
             return (char)(rand);
         }
     }
+    public static String checkPasswordStrength(String testedString){
+        String passwordStrength = "";
+        boolean hasUppercase = false, hasLowercase = false, hasDigit = false, hasSymbol = false, hasLength = false;
+        for(int i = 0; i < testedString.length(); i++){
+            if(testedString.charAt(i) <= 9){
+
+            }
+            else if(testedString.charAt(i) <= 35){
+
+            }
+            else if(testedString.charAt(i) <= 61){
+
+            }
+        }
+        return passwordStrength;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("What is the length of the password?");
