@@ -55,27 +55,34 @@ public class Main {
             conditionsPassed++;
         }
         passwordStrength = switch (conditionsPassed) {
-            case 0 -> "try again";
-            case 1 -> "bad";
-            case 2 -> "moderate";
-            case 3 -> "good";
-            case 4 -> "very good";
-            case 5 -> "excellent";
-            default -> "error";
+            case 0 -> "try again \n";
+            case 1 -> "bad \n";
+            case 2 -> "moderate \n";
+            case 3 -> "good \n";
+            case 4 -> "very good \n";
+            case 5 -> "excellent \n";
+            default -> "error \n";
         };
         return passwordStrength;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.println("How many passwords do you want to generate");
+        int passwordsNumber = sc.nextInt();
         System.out.println("What is the length of the password?");
         int passwordLength = sc.nextInt();
-        StringBuilder password = new StringBuilder();
-        for(int i = 0; i < passwordLength; i++){
-            password.append(generateCharacter());
+        for(int i = 0; i < passwordsNumber; i++) {
+            StringBuilder password = new StringBuilder();
+            for (int j = 0; j < passwordLength; j++) {
+                password.append(generateCharacter());
+            }
+            System.out.println(password);
+            System.out.print("password security:");
+            System.out.print(checkPasswordStrength(password));
+            System.out.println("-----------------------------------------------------------------------------------");
         }
-        System.out.println(password);
-        System.out.println("password security:");
-        System.out.print(checkPasswordStrength(password));
+        //TO DO: Add user input function
+        //TO DO: Add output and user feedback function
     }
-
 }
